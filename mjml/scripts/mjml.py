@@ -3,7 +3,7 @@
 mjml.
 
 Usage:
-  mjml [-] [-s]
+  mjml [-i] [-s]
   mjml <MJML-FILE>
   mjml <MJML-FILE> -o <OUTPUT-FILE>
 """

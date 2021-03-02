@@ -3,6 +3,7 @@
 mjml.
 
 Usage:
+  mjml [-] [-s]
   mjml <MJML-FILE>
   mjml <MJML-FILE> -o <OUTPUT-FILE>
 """
@@ -14,6 +15,7 @@ import sys
 from docopt import docopt
 
 from mjml.mjml2html import mjml_to_html
+import logging
 
 
 def main():
@@ -21,7 +23,8 @@ def main():
     mjml_filename = arguments['<MJML-FILE>']
     output_filename = arguments['<OUTPUT-FILE>']
 
-    if mjml_filename == '-':
+    # if mjml_filename == '-':
+    if mjml_filename is None:
         stdin = sys.stdin.buffer
         mjml_fp = BytesIO(stdin.read())
         result = mjml_to_html(mjml_fp)
